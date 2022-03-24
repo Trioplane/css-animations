@@ -1,0 +1,285 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background: url(diamond-background.png) rgb(201, 201, 201);
+}
+/*
+ * Base styles
+ */
+
+.alert-container {
+  position: fixed;
+  top: 10vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert {
+  pointer-events: none;
+  background-color: hsl(204, 7%, 85%);
+  padding: 0.75em;
+  border-radius: 0.25em;
+  opacity: 1;
+  transition: all 500ms ease-in-out;
+  margin-bottom: 0.5em;
+  animation: hover 3s ease-in-out infinite alternate;
+}
+
+.alert:last-child {
+  margin-bottom: 0;
+}
+
+.alert.hide {
+  opacity: 0;
+}
+
+code {
+  background-color: rgb(58, 58, 58);
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  border-radius: 0.3em;
+  max-width: clamp(10vw, 20vw, 30vw);
+  height: clamp(15vw, 25vw, 35vw);
+  color: white;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+.anim-container {
+  padding: 1em;
+  background-color: lightblue;
+  opacity: 0.9;
+}
+.hover-container {
+  padding: 1em;
+  background-color: lightseagreen;
+  opacity: 0.9;
+}
+
+.downloads {
+  padding: 1em;
+  background-color: lightgreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 5em;
+  opacity: 0.9;
+}
+
+.downloads > div {
+  margin-bottom: 3em;
+  font-size: 1em;
+}
+
+.download {
+  background-color: lightsalmon;
+  padding: 1em;
+  border-radius: 0.3em;
+  margin: 0.3em;
+  text-decoration: none;
+  color: black;
+  font-weight: bolder;
+}
+
+.downloads > p {
+  transition: all 1s ease;
+  font-weight: bold;
+}
+
+.downloads > p:hover {
+  letter-spacing: 2.5em;
+}
+
+.box {
+  margin: 2em;
+  background-color: lightcoral;
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 0.1em;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  filter: brightness(1.2);
+}
+
+.box:nth-of-type(even) {
+  background-color: lightgoldenrodyellow;
+}
+
+.box:nth-of-type(even):hover {
+  filter: brightness(0.95);
+}
+
+/*
+ * NTHs
+ */
+
+.anim-container > .box:nth-of-type(1):hover {
+  animation: hover 1.5s ease-in-out infinite alternate;
+}
+
+.anim-container > .box:nth-of-type(2):hover {
+  animation: fadeInRight 1.5s ease;
+}
+
+.anim-container > .box:nth-of-type(3):hover {
+  animation: fadeInLeft 1.5s ease;
+}
+
+.anim-container > .box:nth-of-type(4):hover {
+  animation: fadeIn 1s ease;
+}
+
+.anim-container > .box:nth-of-type(5):hover {
+  animation: fadeInScale 1s ease;
+}
+
+.anim-container > .box:nth-of-type(6):hover {
+  animation: rgb-gradient 1s ease infinite alternate;
+}
+
+.anim-container > .box:nth-of-type(7):hover {
+  animation: victory 1s ease;
+}
+
+/*
+ * Animations
+ */
+
+@keyframes hover {
+  0% {
+    transform: translateY(1vw);
+  }
+  100% {
+    transform: translateY(-1vw);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(20%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+
+@keyframes rgb-gradient {
+  0% {
+    background: linear-gradient(to right, red, orange);
+  }
+  15% {
+    background: linear-gradient(to right, red, orange, yellow);
+  }
+  25% {
+    background: linear-gradient(to right, orange, yellow);
+  }
+  35% {
+    background: linear-gradient(to right, orange, yellow, green);
+  }
+  50% {
+    background: linear-gradient(to right, yellow, green);
+  }
+  65% {
+    background: linear-gradient(to right, yellow, green, blue);
+  }
+  75% {
+    background: linear-gradient(to right, green, blue);
+  }
+  85% {
+    background: linear-gradient(to right, green, blue, indigo);
+  }
+  100% {
+    background: linear-gradient(to right, blue, indigo);
+  }
+}
+
+@keyframes victory {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 5em 2em rgba(255, 238, 0);
+  }
+  50% {
+    transform: scale(1.2) rotate(-10deg);
+    box-shadow: 0 0 5em 1em rgb(255, 238, 0);
+  }
+  75% {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 0 5em 2em rgb(255, 238, 0);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    box-shadow: 0 0 0em 0em rgb(255, 238, 0);
+  }
+}
+
+/* Hover Effects */
+.hover-container > .box:nth-of-type(2):hover {
+  transform: scale(1.1);
+}
+
+.hover-container > .box:nth-of-type(3):hover {
+  transform: rotateX(30deg);
+}
+
+.hover-container > .box:nth-of-type(4):hover {
+  transform: rotateX(-30deg);
+}
+
+.hover-container > .box:nth-of-type(5):hover {
+  box-shadow: 0 0 3em 1em rgb(255, 253, 227);
+}
+
+.hover-container > .box:nth-of-type(6):hover {
+  margin-inline: 2.5em;
+}
+
+.hover-container > .box:nth-of-type(7):hover {
+  padding-inline: 2.5em;
+}
+
+.hover-container > .box:nth-of-type(8):hover {
+  transform: translateY(-0.4vw);
+}
+
+.hover-container > .box:nth-of-type(9):hover {
+  transform: translateY(0.4vw);
+}

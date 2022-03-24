@@ -1,0 +1,32 @@
+/* Hover Effects */
+.element:hover {
+  transform: scale(1.1);
+}
+
+.element:hover {
+  transform: rotateX(30deg);
+}
+
+.element:hover {
+  transform: rotateX(-30deg);
+}
+
+.element:hover {
+  box-shadow: 0 0 3em 1em rgb(255, 253, 227);
+}
+
+.element:hover {
+  margin-inline: 2.5em;
+}
+
+.element:hover {
+  padding-inline: 2.5em;
+}
+
+.element:hover {
+  transform: translateY(-0.4vw);
+}
+
+.element:hover {
+  transform: translateY(0.4vw);
+}
